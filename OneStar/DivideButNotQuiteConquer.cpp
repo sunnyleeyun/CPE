@@ -4,7 +4,7 @@ using namespace std;
 int main() {
 	int a, b; 
 	while (cin >> a >> b) {
-		if (a < 2 && b < 2) {
+		if (a < 2 || b < 2) {
 			cout << "Boring!" << endl;
 			continue;
 		}
