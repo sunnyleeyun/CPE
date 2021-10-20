@@ -11,7 +11,7 @@ int main() {
 		}
 		for (int i = 0; i < l - 1; i++) {
 			for (int j = 0; j < l - i - 1; j++) {
-				if (m[j] > m[ja+ 1]) {
+				if (m[j] > m[j+ 1]) {
 					swap(m[j], m[j + 1]);
 					c++;
 				}
