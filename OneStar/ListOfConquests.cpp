@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+	// Hint: cin.ignore() to ignore \n, use map and iterator
 	map<string, int> count;
 	map<string, int>::iterator iter;
 	int n;
