@@ -1,21 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main() {
-	int a,b;
-	while (cin >> a >> b) {
+int main()
+{
+	int a, b;
+	while (cin >> a >> b)
+	{
 		cout << a << " " << b << " ";
-		if (a>b) {int c=a; a=b; b=c;}
-		int maxLen=0;
-		for (int k=a; k<=b; k++) {
-			int n=k, len=1;
-			while (true) {
-				if (n==1) break;
-				if (n%2) n=3*n+1;
-				else n/=2;
-				len++;
-			}
-			maxLen = max(len, maxLen);
+		int maxLen = 0;
+		if (a > b)
+		{
+			int c = a;
+			a = b;
+			b = c;
+		}
+		for (int i = a; i <= b; ++i)
+		{
+			int n = i;
+			int tempLength = 1;
+			do {
+				tempLength++;
+				if (n % 2) n = 3 * n + 1;
+				else n = n / 2;
+			} while (n != 1);
+			maxLen = max(maxLen, tempLength);
 		}
 		cout << maxLen << endl;
 	}
