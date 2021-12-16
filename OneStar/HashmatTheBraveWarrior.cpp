@@ -10,4 +10,5 @@ int main()
 	{
 		cout << abs(a - b) << endl;
 	}
+	return 0;
 }
