@@ -1,31 +1,38 @@
 #include <iostream>
-#include <cctype>
 using namespace std;
 
-int main() {
-	int n = -1, M = -1, list[256] = {0};
-	char text[1000];
+int main()
+{
+	// Hint 1: Set up an array. Use the indexes store alphabets, and the value to store the count.
+	// Hint 2: cin.ignore(not too small int, '\n') can help avoid extra line
+	int n;
 	cin >> n;
 	cin.ignore(256, '\n');
-	while (n--) {
+	char text[1000] = {};
+	int maxCount = 0;
+	int list[256] = {};
+	while (n--)
+	{
 		cin.getline(text, 1000);
 		int i = 0;
-		while (text[i] != '\0') {
-			if (isalpha(text[i])) {
-				text[i] = toupper(text[i]);
-				list[text[i]]++;
-				M = max(M, list[text[i]]);
+		while (text[i] != '\0')
+		{
+			if (isalpha(text[i]))
+			{
+				list[toupper(text[i])]++;
+				maxCount = max(maxCount, list[toupper(text[i])]);
 			}
-			i++;
+			++i;
 		}
 	}
 	
-	for (M; M>=1; M--) {
-		for (char c = 'A'; c <= 'Z'; c++) {
-			if (M == list[c]) {
-				cout << c << " " << M << endl;
-			}
+	for (int i = maxCount; i >= 1; i--)
+	{
+		for (char c = 'A'; c <= 'Z'; c++)
+		{
+			if (list[c] == i) cout << c << " " << i << endl;
 		}
 	}
+		
 	return 0;
 }
