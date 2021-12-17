@@ -2,14 +2,20 @@
 #include <set>
 using namespace std;
 
-int main() {
+int main()
+{
+	// Hint: use set
 	int n;
-	while (cin >> n) {
-		int a; cin >> a;
+	while (cin >> n)
+	{
 		set<int> s;
-		for (int i = 1; i < n; i++) {
-			int b; cin >> b;
-			int d = ((b - a) > 0 ? (b - a) : (a - b));
+		int a;
+		cin >> a;
+		for (int i = 1; i < n; ++i)
+		{
+			int b;
+			cin >> b;
+			int d = (b - a > 0) ? (b - a) : (a - b);
 			if (d && d < n) s.insert(d);
 			a = b;
 		}
