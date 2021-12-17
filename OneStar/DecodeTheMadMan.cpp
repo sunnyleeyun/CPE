@@ -1,14 +1,16 @@
 #include <iostream>
-#include <cstdio>
 #include <cstring>
 using namespace std;
 
-int main() {
+int main()
+{
+	// Hint: Store all, get pointer via strchr, cout *(ptr - 2)
 	char c, s[] = "`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
-	while (cin.get(c)) {
+	while (cin.get(c))
+	{
 		c = tolower(c);
-		char * p = strchr(s, c);
-		if (p) cout << *(p - 2);
+		char * pc = strchr(s, c);
+		if (pc) cout << *(pc - 2);
 		else cout << c;
 	}
 	return 0;
