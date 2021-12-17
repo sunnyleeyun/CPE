@@ -2,21 +2,29 @@
 #include <cstring>
 using namespace std;
 
-int main() {
-	char str[100][101];
-	int len[100], n = 0, max = 0;
-	while (cin.getline(str[n], 101)) {
-		len[n] = strlen(str[n]);
-		if (len[n] > max) max = len[n];
-		for (int i = len[n]; i < max; i++) {
-			str[n][i] = ' ';
-			len[n]++;
+int main()
+{
+	// Hint1: Store in a two dimention char array, add space to fill length, then turn 90 degree
+	char s[101][101];
+	int n = 0;
+	int len[101] = {}, maxLen = 0;
+	while (cin.getline(s[n], 101))
+	{
+		len[n] = strlen(s[n]);
+		if (len[n] > maxLen) maxLen = len[n];
+		for (int k = len[n]; k < maxLen; ++k)
+		{
+			s[n][k] = ' ';
+			++len[n];
 		}
-		n++;
+		++n;
 	}
-	for (int i = 0; i < max; i++) {
-		for (int j = n - 1; j >= 0; j--) {
-			if (i < len[j]) cout << str[j][i];
+	
+	for (int j = 0; j < maxLen; ++j)
+	{
+		for (int i = n - 1; i >= 0; --i)
+		{
+			if (j < len[i]) cout << s[i][j];
 		}
 		cout << endl;
 	}
