@@ -4,6 +4,8 @@ using namespace std;
 
 int main()
 {
+	// Hint1: Store to char array a and b with gets(str), add count array, output
+	// Hint2: Output is a bit tricky. Might have duplicated char.
 	char a[1001], b[1001];
 	int ca[123] = {}, cb[123] = {};
 	int i = 0, j = 0;
