@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+	// Hint: Math
 	int n;
 	cin >> n;
 	int s, d;
