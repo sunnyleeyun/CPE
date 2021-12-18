@@ -1,15 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	long long int a, b;
-	while (cin >> a >> b) {
-		for (int i = 0; ; i++) {
-			if ((a + i) * (i - a + 1) / 2 >= b) {
-				cout << i << endl;
-				break;
-			}
+int main()
+{
+	// Hint: Use you brain and pencil. It's math.
+	long long int s, d;
+	while (cin >> s >> d)
+	{
+		while (d > 0)
+		{
+			d -= s;
+			++s;
 		}
+		cout << s - 1 << endl;
 	}
 	return 0;
 }
