@@ -1,21 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	int n; cin >> n;
-	while (n--) {
-		int d, p, m[3650] = {0};
+int main()
+{
+	// Hint: Store a container for days
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int d, n, m[3651] = {};
 		cin >> d;
-		cin >> p;
-		while (p--) {
-			int v; cin >> v;
+		cin >> n;
+		while (n--)
+		{
+			int v;
+			cin >> v;
 			for (int i = v; i <= d; i += v) m[i] = 1;
 		}
-		int r = 0;
-		for (int i = 0; i <= d; i++) {
-			if (m[i] == 1 && i % 7 != 6 && i % 7 != 0) r += 1;
+		
+		int sum = 0;
+		for (int i = 0; i <= d; ++i)
+		{
+			if (m[i] == 1 && i % 7 != 6 && i % 7 != 0) sum++;
 		}
-		cout << r << "\n";
+		cout << sum << endl;
 	}
 	return 0;
 }
